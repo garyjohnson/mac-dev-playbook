@@ -20,6 +20,14 @@
     - role: geerlingguy.mas
       when: mas_installed_apps
       tags: ['mas']
+    - role: tkimball83.iterm2
+      iterm2_defaults:
+        PrefsCustomFolder:
+          type: string
+          value: "~/repositories/dotfiles/iterm/"
+        LoadPrefsFromCustomFolder:
+          type: bool
+          value: true
 
   tasks:
     - include: tasks/ansible-setup.yml
