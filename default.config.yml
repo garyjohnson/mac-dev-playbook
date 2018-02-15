@@ -1,17 +1,11 @@
 ---
-vars_prompt:
-    - name: "mas_email"
-      prompt: "Mac App Store Email:"
-    - name: "mas_password"
-      prompt: "Mac App Store Password:"
-      private: yes
 
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
 configure_sudoers: yes
 configure_terminal: no
-configure_osx: no
+configure_osx: yes
 
 dotfiles_repo: https://github.com/garyjohnson/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
@@ -21,6 +15,15 @@ dotfiles_files:
   - .gitconfig
   - .tmux.conf
   - iterm
+  - .macos
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/php
+
+homebrew_cask_apps:
+  - docker
 
 homebrew_installed_packages:
   - autoconf
@@ -37,10 +40,6 @@ homebrew_installed_packages:
   - awk
   - python3
 
-homebrew_taps:
-  - homebrew/core
-  - caskroom/cask
-  - homebrew/php
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -57,10 +56,10 @@ mas_installed_apps:
   - { id: 736189492, name: "Notability (2.8.1)" }
   - { id: 409203825, name: "Numbers (4.3.1)" }
   - { id: 506189836, name: "Harvest (2.1.2)" }
-mas_email: mas_email
-mas_password: mas_password
+mas_email: "gary@gjtt.com"
+mas_password: "WfdXFhz5"
 
-osx_script: "~/.osx --no-restart"
+osx_script: "~/.macos --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
