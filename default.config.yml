@@ -57,7 +57,7 @@ mas_installed_apps:
   - { id: 409203825, name: "Numbers (4.3.1)" }
   - { id: 506189836, name: "Harvest (2.1.2)" }
 mas_email: "gary@gjtt.com"
-mas_password: "WfdXFhz5"
+mas_password: ""
 
 osx_script: "~/.macos --no-restart"
 
